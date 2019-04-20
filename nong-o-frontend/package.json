@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@livechat/ui-kit": "^0.4.0-1",
     "@material-ui/core": "^3.9.3",
     "@livechat/ui-kit": "^0.4.0-1",
     "react": "^16.8.6",
+    "react-chat-widget": "^2.1.4-1",
     "react-dom": "^16.8.6",
     "react-scripts": "2.1.8"
   },
