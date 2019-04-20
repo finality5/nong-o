@@ -43,8 +43,14 @@ def send_message():
     message = request.form['message']
     project_id = os.getenv('DIALOGFLOW_PROJECT_ID')
     fulfillment_text = detect_intent_text(project_id, "unique", message, 'th')
-    response_text = { "message": fulfillment_text }
-    return jsonify(response_text)
+    # response_text = { "message": fulfillment_text }
+
+    response = jsonify({ "message": fulfillment_text })
+    response.headers.add('Access-Control-Allow-Origin', '*')
+
+    return response
+
+    #return jsonify(response_text)
 
 
 if __name__ == "__main__":
