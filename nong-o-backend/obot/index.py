@@ -9,6 +9,7 @@ import pusher
 data = {}
 
 app = Flask(__name__)
+app.config['CORS_HEADERS'] = 'Content-Type'
 CORS(app)
 
 def detect_intent_text(project_id, session_id, text, language_code):
@@ -48,6 +49,7 @@ def index():
     return render_template('index.html')
 
 @app.route('/send_message', methods=['POST'])
+@cross_origin(origin='localhost',headers=['Content- Type','Authorization'])
 def send_message():
     message = request.form['message']
     project_id = os.getenv('DIALOGFLOW_PROJECT_ID')
