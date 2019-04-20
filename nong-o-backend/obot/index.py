@@ -9,8 +9,7 @@ import pusher
 data = {}
 
 app = Flask(__name__)
-app.config['CORS_HEADERS'] = 'Content-Type'
-cors = CORS(app, resources={r"/send_message": {"origins": "http://localhost:8080"}})
+CORS(app)
 
 def detect_intent_text(project_id, session_id, text, language_code):
     session_client = dialogflow.SessionsClient()
@@ -58,7 +57,7 @@ def send_message():
     # response_text = { "message": fulfillment_text }
 
     response = jsonify({ 'message': fulfillment_text })
-    response.headers.add('Access-Control-Allow-Origin', '*')
+    # response.headers.add('Access-Control-Allow-Origin', '*')
 
     return response;
 
