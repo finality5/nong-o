@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons');
-
+/*@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons');*/
+@import url('https://fonts.googleapis.com/css?family=Kanit');
 body { margin: 0; padding: 0; }
 
 #App {
-  font-family: 'Roboto', sans-serif ,Helvetica;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Kanit', sans-serif;
   
 }
 
