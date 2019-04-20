@@ -6,6 +6,8 @@ import React, {
 
 import { Widget, addResponseMessage } from 'react-chat-widget';
 
+import { sendMessage } from 'api';
+
 import 'react-chat-widget/lib/styles.css';
 import 'styles/index.css';
 
@@ -17,6 +19,7 @@ const ChatWidget = memo(() => {
   const handleNewUserMessage = useCallback((newMessage) => {
     // Now send the message throught the backend API
     console.log('newMessage:', newMessage);
+    sendMessage(newMessage);
   }, []);
 
   return (
