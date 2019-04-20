@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify, render_template, make_response
+from flask_cors import CORS
 import os
 import dialogflow
 import requests
@@ -8,6 +9,7 @@ import pusher
 data = {}
 
 app = Flask(__name__)
+CORS(app)
 
 def detect_intent_text(project_id, session_id, text, language_code):
     session_client = dialogflow.SessionsClient()
