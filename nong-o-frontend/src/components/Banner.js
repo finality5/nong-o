@@ -9,6 +9,8 @@ import Button from '@material-ui/core/Button';
 
 import yellow from '@material-ui/core/colors/yellow';
 
+import benefits from 'data/benefits';
+
 const styles = theme => {
   const bannerBackground = yellow[100];
 
@@ -28,6 +30,8 @@ const styles = theme => {
   }
 };
 
+const ipsum = 'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero\'s De Finibus Bonorum et Malorum for use in a type specimen book.'
+
 const Banner = memo((props) => {
   const { classes } = props;
 
@@ -41,9 +45,9 @@ const Banner = memo((props) => {
         </div>
         <Grid container style={{ marginTop: 48 }}>
           {
-            [...Array(4).keys()].map(() => (
+            benefits.map(benefit => (
               <Grid item md={3} sm={6} justify="center">
-                Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.
+              {benefit || ipsum}
               </Grid>
             ))
           }
