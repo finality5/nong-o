@@ -16,10 +16,9 @@ const ChatWidget = memo(() => {
     addResponseMessage('อิรัชชัยมาเสะ!');
   }, []);
 
-  const handleNewUserMessage = useCallback((newMessage) => {
-    // Now send the message throught the backend API
-    console.log('newMessage:', newMessage);
-    sendMessage(newMessage);
+  const handleNewUserMessage = useCallback(async (newMessage) => {
+    const oResponse = await sendMessage(newMessage);
+    addResponseMessage(oResponse);
   }, []);
 
   return (
