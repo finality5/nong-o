@@ -37,7 +37,7 @@ const AppBar = memo((props) => {
             <Typography variant="h6" color="inherit" className={classes.grow} style={{marginLeft:8 ,marginTop:10, fontSize:27}}>
             nong-o
           </Typography>
-          <Button color="inherit">GITHUB</Button>
+          <Button color="inherit" onClick={()=> window.open("https://github.com/finality5/nong-o", "_blank")}>GITHUB</Button>
         </Toolbar>
       </MuiAppBar>
     </div>

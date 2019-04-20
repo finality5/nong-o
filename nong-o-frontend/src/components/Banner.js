@@ -56,7 +56,7 @@ const Banner = memo((props) => {
     <div className={classes.banner}>
       <div className={`${classes.bannerContentContainer} container`}>
         <div>
-          <Typography variant="h2" color="inherit">
+          <Typography variant="h2" color="inherit" fontFamily="Kanit">
             ทำไมต้องคุยกับน้องโอ ?
           </Typography>
         </div>
@@ -64,7 +64,7 @@ const Banner = memo((props) => {
           {
             benefits.map(benefit => (
               <Grid item md={6} sm={6} className={classes.benefit} key={benefit}>
-                <Typography variant="h5" color="inherit" align="center" >
+                <Typography variant="h5" color="inherit" align="center" fontFamily="Kanit">
                   {benefit || ipsum}
                 </Typography>
               </Grid>
