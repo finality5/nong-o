@@ -1,0 +1,72 @@
+{
+    "Import prop-types": {
+        "prefix": "impt",
+        "body": [
+            "import PropTypes from 'prop-types';"
+        ],
+        "description": "import prop-types"
+    },
+    "Declare type constant": {
+        "prefix": "ec",
+        "body": [
+            "export const ${1:type} = '${1:type}';"
+        ],
+        "description": "Declare type constant for actions"
+    },
+    "export get request constants": {
+        "prefix": "egrc",
+        "body": [
+            "export const ${1:type}_REQUEST = '${1:type}_REQUEST';\nexport const ${1:type}_SUCCESS = '${1:type}_SUCCESS';\nexport const ${1:type}_FAILURE = '${1:type}_FAILURE';"
+        ],
+        "description": "export get request, success, failure constants"
+    },
+    "Import get request constants": {
+        "prefix": "igrc",
+        "body": [
+            "${1:type}_REQUEST,\n${1:type}_SUCCESS,\n${1:type}_FAILURE,"
+        ],
+        "description": "Import get request, success, failure constants"
+    },
+    "Import Material-UI Component": {
+        "prefix": "imuc",
+        "body": [
+            "import ${1:ComponentName} from '@material-ui/core/${1:ComponentName}';"
+        ],
+        "description": "Import Material-UI Component"
+    },
+    "Import Material-UI Color": {
+        "prefix": "imucc",
+        "body": [
+            "import ${1:color} from '@material-ui/core/colors/${1:color}';"
+        ],
+        "description": "Import Material-UI Color"
+    },
+    "Import withStyles": {
+        "prefix": "imws",
+        "body": [
+            "import { withStyles } from '@material-ui/core/styles';"
+        ],
+        "description": "Import withStyles function"
+    },
+    "Material-UI Typography": {
+        "prefix": "imtypo",
+        "body": [
+            "import Typography from '@material-ui/core/Typography';"
+        ],
+        "description": "Import Material-UI Typography Component"
+    },
+    "Material-UI Paper": {
+        "prefix": "impaper",
+        "body": [
+            "import Paper from '@material-ui/core/Paper';"
+        ],
+        "description": "Import Material-UI Paper Component"
+    },
+    "Material-UI Grid": {
+        "prefix": "imgrid",
+        "body": [
+            "import Grid from '@material-ui/core/Grid';"
+        ],
+        "description": "Import Material-UI Grid Component"
+    }
+}
