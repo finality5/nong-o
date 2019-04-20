@@ -3,6 +3,7 @@ import React, {
 } from 'react';
 
 import { MuiThemeProvider } from '@material-ui/core/styles';
+import { ThemeProvider } from '@livechat/ui-kit'
 
 import theme from 'theme';
 
@@ -13,10 +14,12 @@ console.log(theme);
 
 const App = memo(() => (
   <div id="App">
-    <MuiThemeProvider theme={theme}>
-      <AppBar />
-      <Home />
-    </MuiThemeProvider>
+    <ThemeProvider>
+      <MuiThemeProvider theme={theme}>
+        <AppBar />
+        <Home />
+      </MuiThemeProvider>
+    </ThemeProvider>
   </div>
 ));
 

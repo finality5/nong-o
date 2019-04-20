@@ -13,6 +13,7 @@ import benefits from 'data/benefits';
 
 const styles = theme => {
   const bannerBackground = yellow[100];
+  const benefitsBackground = 'rgba(0, 0, 0, 0.75)';
 
   return {
     banner: {
@@ -26,6 +27,16 @@ const styles = theme => {
       height: '100%',
       alignItems: 'center',
       justifyContent: 'center',
+    },
+    benefits: {
+      display: 'flex',
+      alignItems: 'center',
+      minHeight: 300,
+      backgroundColor: benefitsBackground,
+      color: theme.palette.getContrastText(benefitsBackground),
+    },
+    benefit: {
+      padding: theme.spacing.unit * 2,
     },
   }
 };
@@ -43,11 +54,13 @@ const Banner = memo((props) => {
             ทำไมต้องคุยกับน้องโอ ?
           </Typography>
         </div>
-        <Grid container style={{ marginTop: 48 }}>
+        <Grid container style={{ marginTop: 48 }} className={classes.benefits} justify="center">
           {
             benefits.map(benefit => (
-              <Grid item md={3} sm={6} justify="center">
-              {benefit || ipsum}
+              <Grid item md={6} sm={6} className={classes.benefit} key={benefit}>
+                <Typography variant="h5" color="inherit" align="center">
+                  {benefit || ipsum}
+                </Typography>
               </Grid>
             ))
           }
