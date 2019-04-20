@@ -5,10 +5,13 @@ import requests
 import json
 import pusher
 
+data = {}
+
 app = Flask(__name__)
 
 def detect_intent_text(project_id, session_id, text, language_code):
     session_client = dialogflow.SessionsClient()
+    print('==========' + 'session_client' + '==========')
     session = session_client.session_path(project_id, session_id)
 
     if text:
@@ -22,17 +25,21 @@ def detect_intent_text(project_id, session_id, text, language_code):
 
 # function for responses
 def results():
+    global data
     # build a request object
-    req = request.get_json(force=True)
-    #print(req)
-    print(req['queryResult']['fulfillmentText'])
+    data = request.get_json(force=True)
+    # print(req['queryResult']['fulfillmentText'])
     # return a fulfillment response
-    return {'fulfillmentText': 'This is a response from webhook.'}
+    return str(data)
 
 @app.route('/webhook', methods=['GET', 'POST'])
 def webhook():
-    #print(make_response(jsonify(results())))
     return make_response(jsonify(results()))
+
+@app.route('/o', methods=['GET'])
+def o():
+    #return json.dumps(data["queryResult"]["fulfillmentMessages"][0]["text"]["text"][0], ensure_ascii=False)
+    return json.dumps(data["message"])
 
 @app.route('/')
 def index():
@@ -42,7 +49,8 @@ def index():
 def send_message():
     message = request.form['message']
     project_id = os.getenv('DIALOGFLOW_PROJECT_ID')
-    fulfillment_text = detect_intent_text(project_id, "unique", message, 'th')
+    fulfillment_text = detect_intent_text(project_id, "unique", message, 'en')
+    print('=========='+str(fulfillment_text) + '==========')
     response_text = { "message": fulfillment_text }
     return jsonify(response_text)
 

@@ -30,7 +30,7 @@ $('#target').on('submit', function(e){
     // loading 
     $('.chat-container').append(`
         <div class="chat-message text-center col-md-2 offset-md-10 bot-message" id="loading">
-            <b>.</b>
+            <b>...</b>
         </div>
     `)
 
