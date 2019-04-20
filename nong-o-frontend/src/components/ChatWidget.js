@@ -11,14 +11,26 @@ import { sendMessage } from 'api';
 import 'react-chat-widget/lib/styles.css';
 import 'styles/index.css';
 
+const utterance = new SpeechSynthesisUtterance();
+utterance.lang = 'th-TH';
+utterance.rate = 1.0;
+
 const ChatWidget = memo(() => {
+  const textToSpeech = useCallback((message) => {
+    speechSynthesis.cancel();
+    utterance.text = message;
+    speechSynthesis.speak(utterance);
+  }, []);
+
   useEffect(() => {
-    addResponseMessage('อิรัชชัยมาเสะ!');
+    const welcomeText = 'อิรัชชัยมาเสะ!'
+    addResponseMessage(welcomeText);
   }, []);
 
   const handleNewUserMessage = useCallback(async (newMessage) => {
-    const oResponse = await sendMessage(newMessage);
-    addResponseMessage(oResponse);
+    const oMessage = await sendMessage(newMessage);
+    addResponseMessage(oMessage);
+    textToSpeech(oMessage);
   }, []);
 
   return (
