@@ -7,19 +7,20 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 
-import yellow from '@material-ui/core/colors/yellow';
+//import yellow from '@material-ui/core/colors/yellow';
 
 import benefits from 'data/benefits';
-
+import bgimg from './bg.png';
 const styles = theme => {
-  const bannerBackground = yellow[100];
+  //const bannerBackground = yellow[100];
   const benefitsBackground = 'rgba(0, 0, 0, 0.75)';
 
   return {
     banner: {
       height: 'calc(100vh - 64px)',
-      backgroundColor: bannerBackground,
-      color: theme.palette.getContrastText(bannerBackground),
+      backgroundImage: `url(${bgimg})`,
+      //color: theme.palette.getContrastText(bannerBackground),
+      
     },
     bannerContentContainer: {
       display: 'flex',
@@ -58,7 +59,7 @@ const Banner = memo((props) => {
           {
             benefits.map(benefit => (
               <Grid item md={6} sm={6} className={classes.benefit} key={benefit}>
-                <Typography variant="h5" color="inherit" align="center">
+                <Typography variant="h5" color="inherit" align="center" >
                   {benefit || ipsum}
                 </Typography>
               </Grid>

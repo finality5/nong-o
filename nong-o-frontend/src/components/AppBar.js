@@ -33,9 +33,9 @@ const AppBar = memo((props) => {
     <div className={classes.root}>
       <MuiAppBar position="static" className={classes.appBar}>
         <Toolbar>
-            <img src={image1} height="48px" width="48px" />
-            <Typography variant="h6" color="inherit" className={classes.grow} align="left">
-            น้องโอ
+            <img src={image1} height="48px" />
+            <Typography variant="h6" color="inherit" className={classes.grow} style={{marginLeft:8 ,marginTop:10, fontSize:27}}>
+            nong-o
           </Typography>
           <Button color="inherit">GITHUB</Button>
         </Toolbar>
