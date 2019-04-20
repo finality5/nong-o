@@ -56,7 +56,7 @@ const Banner = memo((props) => {
     <div className={classes.banner}>
       <div className={`${classes.bannerContentContainer} container`}>
         <div>
-          <Typography variant="h3" color="inherit">
+          <Typography variant="h2" color="inherit">
             ทำไมต้องคุยกับน้องโอ ?
           </Typography>
         </div>
