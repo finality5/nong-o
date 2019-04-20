@@ -1,5 +1,6 @@
 import React, {
   memo,
+  useCallback,
 } from 'react';
 
 import { withStyles } from '@material-ui/core/styles';
@@ -47,6 +48,10 @@ const ipsum = 'Lorem ipsum, or lipsum as it is sometimes known, is dummy text us
 const Banner = memo((props) => {
   const { classes } = props;
 
+  const handleTalkClick = useCallback(() => {
+    document.getElementsByClassName('rcw-launcher')[0].click();
+  }, []);
+
   return (
     <div className={classes.banner}>
       <div className={`${classes.bannerContentContainer} container`}>
@@ -67,7 +72,7 @@ const Banner = memo((props) => {
           }
         </Grid>
         <div style={{ marginTop: 48 }}>
-          <Button variant="contained" color="primary" size="large">
+          <Button variant="contained" color="primary" size="large" onClick={handleTalkClick}>
             คุยกับน้องโอเลยสิ!
           </Button>
         </div>
