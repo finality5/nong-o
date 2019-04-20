@@ -9,8 +9,11 @@ import Button from '@material-ui/core/Button';
 
 import yellow from '@material-ui/core/colors/yellow';
 
+import benefits from 'data/benefits';
+
 const styles = theme => {
   const bannerBackground = yellow[100];
+  const benefitsBackground = 'rgba(0, 0, 0, 0.75)';
 
   return {
     banner: {
@@ -25,8 +28,20 @@ const styles = theme => {
       alignItems: 'center',
       justifyContent: 'center',
     },
+    benefits: {
+      display: 'flex',
+      alignItems: 'center',
+      minHeight: 300,
+      backgroundColor: benefitsBackground,
+      color: theme.palette.getContrastText(benefitsBackground),
+    },
+    benefit: {
+      padding: theme.spacing.unit * 2,
+    },
   }
 };
+
+const ipsum = 'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero\'s De Finibus Bonorum et Malorum for use in a type specimen book.'
 
 const Banner = memo((props) => {
   const { classes } = props;
@@ -39,11 +54,13 @@ const Banner = memo((props) => {
             ทำไมต้องคุยกับน้องโอ ?
           </Typography>
         </div>
-        <Grid container style={{ marginTop: 48 }}>
+        <Grid container style={{ marginTop: 48 }} className={classes.benefits} justify="center">
           {
-            [...Array(4).keys()].map(() => (
-              <Grid item md={3} sm={6} justify="center">
-                Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.
+            benefits.map(benefit => (
+              <Grid item md={6} sm={6} className={classes.benefit} key={benefit}>
+                <Typography variant="h5" color="inherit" align="center">
+                  {benefit || ipsum}
+                </Typography>
               </Grid>
             ))
           }
