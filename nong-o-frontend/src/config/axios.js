@@ -1,5 +1,5 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://167.99.77.90:3000/api';
+axios.defaults.baseURL = 'http://nongo.coffee-devs.com/api';
 
 export default axios;
