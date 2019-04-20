@@ -10,7 +10,7 @@ data = {}
 
 app = Flask(__name__)
 app.config['CORS_HEADERS'] = 'Content-Type'
-CORS(app)
+cors = CORS(app, resources={r"/send_message": {"origins": "http://localhost:8080"}})
 
 def detect_intent_text(project_id, session_id, text, language_code):
     session_client = dialogflow.SessionsClient()
