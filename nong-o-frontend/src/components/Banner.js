@@ -81,7 +81,7 @@ const Banner = memo((props) => {
             benefits.map(benefit => (
               <Grid item md={6} sm={6} className={classes.benefit} key={benefit}>
                 
-                <Typography variant="h5" color="inherit" align="center" style={{fontFamily:"Mitr"}}>
+                <Typography variant="h5" color="inherit" align="center" style={{fontFamily:"Mitr" , fontWeight:100}}>
                   {benefit || ipsum}
                 </Typography>
               </Grid>
