@@ -7,13 +7,17 @@ import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
-import purple from '@material-ui/core/colors/purple';
+//import purple from '@material-ui/core/colors/purple';
 import classNames from 'classnames';
+
+
 
 //import yellow from '@material-ui/core/colors/yellow';
 
 import benefits from 'data/benefits';
-import bgimg from './bg.png';
+import bgimg from './img/bg.png';
+
+
 const styles = theme => {
   //const bannerBackground = yellow[100];
   const benefitsBackground = 'rgba(0, 0, 0, 0.75)';
@@ -67,16 +71,17 @@ const Banner = memo((props) => {
   return (
     <div className={classes.banner}>
       <div className={`${classes.bannerContentContainer} container`}>
-        <div style={{border:'5px solid white' ,width: "700px",height: "100px",}}>
-          <Typography variant="h2" color="inherit" fontFamily="Kanit" align="center" style={{marginTop:20}}>
+        
+          <Typography variant="h2" color="inherit" align="center" style={{marginTop:20 , fontFamily:"Charmonman"}}>
             ทำไมต้องคุยกับน้องโอ ?
           </Typography>
-        </div>
+        
         <Grid container style={{ marginTop: 48 }} className={classes.benefits} justify="center">
           {
             benefits.map(benefit => (
               <Grid item md={6} sm={6} className={classes.benefit} key={benefit}>
-                <Typography variant="h5" color="inherit" align="center" fontFamily="Kanit">
+                
+                <Typography variant="h5" color="inherit" align="center" style={{fontFamily:"Mitr"}}>
                   {benefit || ipsum}
                 </Typography>
               </Grid>
@@ -88,6 +93,7 @@ const Banner = memo((props) => {
             คุยกับน้องโอเลยสิ!
           </Button>
         </div>
+        
       </div>
     </div>
   );

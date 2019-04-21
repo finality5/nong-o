@@ -7,7 +7,8 @@ import MuiAppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import image1 from './logo.png';
+import image1 from './img/logo.png';
+import image2 from './img/github.svg'
 
 const styles = theme => ({
   root: {
@@ -33,11 +34,15 @@ const AppBar = memo((props) => {
     <div className={classes.root}>
       <MuiAppBar position="static" className={classes.appBar}>
         <Toolbar>
-            <img src={image1} height="48px" alt="logo" />
-            <Typography variant="h6" color="inherit" className={classes.grow} style={{marginLeft:8 ,marginTop:10, fontSize:27}}>
+            
+            <img src={image1} height="48px" alt="logo" onClick={()=> window.location.reload()} style={{cursor: 'pointer'}} />
+            <Typography variant="h6" color="inherit" className={classes.grow} style={{marginLeft:8 ,marginTop:10, fontSize:27 }} onClick={()=> window.location.reload()}>
             nong-o
           </Typography>
-          <Button color="inherit" onClick={()=> window.open("https://github.com/finality5/nong-o", "_blank")}>GITHUB</Button>
+          
+          <Button color="inherit" onClick={()=> window.open("https://github.com/finality5/nong-o", "_blank")}>
+            <img src={image2} height="35px" alt="logo" />
+          </Button>
         </Toolbar>
       </MuiAppBar>
     </div>
