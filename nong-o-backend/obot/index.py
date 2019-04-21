@@ -13,7 +13,6 @@ CORS(app)
 
 def detect_intent_text(project_id, session_id, text, language_code):
     session_client = dialogflow.SessionsClient()
-    print('==========' + 'session_client' + '==========')
     session = session_client.session_path(project_id, session_id)
 
     if text:
