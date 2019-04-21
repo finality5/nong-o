@@ -10,6 +10,7 @@ import { sendMessage } from 'api';
 
 import 'react-chat-widget/lib/styles.css';
 import 'styles/index.css';
+import logo from './jtbb.jpg'
 
 const utterance = new SpeechSynthesisUtterance();
 utterance.lang = 'th-TH';
@@ -38,6 +39,8 @@ const ChatWidget = memo(() => {
       handleNewUserMessage={handleNewUserMessage}
       title="น้องโอ"
       subtitle="ทพจร"
+      
+      profileAvatar={logo}
     />
   );
 });

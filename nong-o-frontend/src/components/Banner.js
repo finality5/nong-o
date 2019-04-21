@@ -7,6 +7,8 @@ import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
+import purple from '@material-ui/core/colors/purple';
+import classNames from 'classnames';
 
 //import yellow from '@material-ui/core/colors/yellow';
 
@@ -40,6 +42,16 @@ const styles = theme => {
     benefit: {
       padding: theme.spacing.unit * 2,
     },
+    margin: {
+      margin: theme.spacing.unit,
+    },
+    cssRoot: {
+      
+      backgroundColor: 'rgba(102, 202, 226)',
+      '&:hover': {
+        backgroundColor: 'rgba(66, 146, 244)',
+      },
+    },
   }
 };
 
@@ -55,8 +67,8 @@ const Banner = memo((props) => {
   return (
     <div className={classes.banner}>
       <div className={`${classes.bannerContentContainer} container`}>
-        <div>
-          <Typography variant="h2" color="inherit" fontFamily="Kanit">
+        <div style={{border:'5px solid white' ,width: "700px",height: "100px",}}>
+          <Typography variant="h2" color="inherit" fontFamily="Kanit" align="center" style={{marginTop:20}}>
             ทำไมต้องคุยกับน้องโอ ?
           </Typography>
         </div>
@@ -72,7 +84,7 @@ const Banner = memo((props) => {
           }
         </Grid>
         <div style={{ marginTop: 48 }}>
-          <Button variant="contained" color="primary" size="large" onClick={handleTalkClick}>
+          <Button variant="contained" color="primary" size="large" onClick={handleTalkClick} className={classNames(classes.margin, classes.cssRoot)}>
             คุยกับน้องโอเลยสิ!
           </Button>
         </div>
